@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "method": "icx_call",
+  "params": {
+    "from": "hx65f6e18d378b57612a28f72acb97021eaa82aa5a",
+    "to": "cx9d10d63edc8225b7fbbecb335a099d97d0ee19d8",
+    "dataType": "call",
+    "data": {
+      "method": "get_vote_talley"
+    }
+  },
+  "id": 1
+}

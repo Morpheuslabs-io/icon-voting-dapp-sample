@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polling SCORE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!--<script src="{{ url_for('static', filename='scripts/contract.js') }}"></script>-->
+    <script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-1.11.2.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wireframe.css') }}">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse"
+                data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse text-center justify-content-between" id="navbar2SupportedContent">
+            <a class="p-2 text-secondary" href="#"><i class="fa fa-dot-circle-o fa-lg d-block pt-1"></i></a>
+            <a class="p-2 text-secondary" href="https://icon.foundation/">ICON Foundation</a>
+            <a class="p-2 text-secondary" href="https://ibriz.ai/">iBriz.ai</a>
+        </div>
+    </div>
+</nav>
+<div class="text-center mx-3">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto ">
+                <h1 class="display-5">Polling SCORE Demo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto">
+                <a class="btn btn-lg btn-primary m-2" href="wallet1"><i class="fa fa-user fa-fw"></i>User 1</a>
+                <a class="btn btn-lg btn-primary m-2" href="wallet2"><i class="fa fa-user fa-fw"></i>User 2</a>
+                <a class="btn btn-lg btn-primary m-2" href="wallet3"><i class="fa fa-user fa-fw"></i>User 3</a>
+            </div>
+        </div>
+        <div class="row alert alert-success">
+            <div class="mx-auto" role="alert">
+                <h3> You have voted '<label id="myVoteResult"></label>'</h3>
+                <h5>Yes: <label id="totalVotesYes"></label> No: <label id="totalVotesNo"></label></h5>
+                <button type="button" id="getAllVotes" class=" btn btn-primary">Get All Votes</button>
+
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col bg-primary px-5">
+                <p class="m-0 ">Question #1</p>
+                <h2 class="mb-3 ">Do you pay with Crypto?</h2> <i
+                    class="fa d-inline-block fa-star text-white"></i><i
+                    class="fa d-inline-block fa-star mx-2 text-white"></i><i
+                    class="fa d-inline-block fa-star text-white"></i>
+                <form>
+                    <div class="form-group pt-5">
+                        <div class="form-check form-check-inline">
+                            <img class="mr-3" src="{{ url_for('static', filename='images/yes.png') }}"
+                                 alt="Plasma" height="50px" width="50px">
+                            <input class="form-check-input" type="radio" name="winnerRadio"
+                                   id="inlineRadio1" value="1" checked="">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <img class="mr-3" src="{{ url_for('static', filename='images/no.png') }}"
+                                 alt="StateChannel" height="50px" width="50px">
+                            <input class="form-check-input" type="radio" name="winnerRadio"
+                                   id="inlineRadio2" value="2">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                    </div>
+                    <button type="button" id="vote" class="btn btn-primary m-2 active pt-3 px-4 text-center">Vote
+                    </button>
+
+                </form>
+            </div>
+            <div class="col mx-2 pt-5 px-5  mb-3">
+                <h5>Total Votes: <label id="totalVotes"></label></h5>
+
+                <canvas id="myChart" width="250" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-md col-md-4"><i class="fa fa-dot-circle-o fa-lg d-block pt-1"> iBriz.ai</i></div>
+            <div class="col-6 col-md col-md-4">
+                <h5><b>Icon Foundation</b></h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="text-muted" href="https://icon.foundation/contents/icon/introduce?lang=en">What is
+                            ICON?</a>
+                    </li>
+                    <li>
+                        <a class="text-muted" href="https://icon.foundation/contents/icx/overviews?lang=en">ICX
+                            Overview</a>
+                    </li>
+                    <li>
+                        <a class="text-muted" href="https://tracker.icon.foundation/">Tracker</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md col-md-4">
+                <h5><b>About iBriz.ai</b></h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="text-muted" href="https://ibriz.ai/">iBriz.ai</a>
+                    </li>
+                    <li>
+                        <a class="text-muted" href="http://ibriz.ai/#services-menu">Services</a>
+                    </li>
+                    <li>
+                        <a class="text-muted" href="#">Privacy</a>
+                    </li>
+                    <li>
+                        <a class="text-muted" href="#">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+
+<script src="{{ url_for('static', filename='scripts/polling-script.js') }}"></script>
+</body>
+
+</html>
