@@ -15,10 +15,8 @@ from repeater import retry
 
 app = Flask(__name__)
 default_account = 'hx86f8117539f039f7c6b5a8ca8d233e2e752bd8fa'
-#default_score = "cxa58f79f960161043c21a4e858914e88c874a3e71"
-default_score = "cx5a16df9a73964ccfa72ded28dad7222187b5ce85"
-icon_service = IconService(HTTPProvider("https://icon-27107-test.morpheuslabs.io/api/v3"))
-#icon_service = IconService(HTTPProvider("https://bicon.net.solidwallet.io/api/v3"))
+default_score = "cx26da99fcddd7f06a0e565e0e3edde3d1218ff5da" # voting smart contract address
+icon_service = IconService(HTTPProvider("http://bops-t.morpheuslabs.io:27107/api/v3"))
 
 wallets = {
     'wallet1': KeyWallet.load(bytes.fromhex("fb9164edaf46e254917694e3ea7daa65796c6899d2382c977fd9e8ffd995f348")),
@@ -144,4 +142,5 @@ def index_wallet(walletName=None):
 
 
 if __name__ == '__main__':
-    app.run(port=8080,debug=True)
+    app.run(host='0.0.0.0',port=8080)
+

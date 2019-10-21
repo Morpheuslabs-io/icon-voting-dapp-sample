@@ -3,11 +3,17 @@ var walletName = pageURL.substr(pageURL.lastIndexOf('/') + 1);
 
 localStorage.setItem("wallet", walletName);
 
+function showLoader(status = true) {
+	if(status) $('.loader').show();
+	else $(".loader").hide();
+}
+
 
 $(function () {
 	$('#vote').click(function () {
 		var polledValue = document.querySelector("input[name='winnerRadio']:checked").value
 		console.log("polledValue :" + polledValue);
+		showLoader();
 		$.ajax({
 			url: '/vote/' + localStorage.getItem("wallet"),
 			data: {
@@ -15,10 +21,16 @@ $(function () {
 			},
 			type: 'POST',
 			success: function (response) {
+				showLoader(false);
 				console.log(response);
 				jsonResponse = JSON.parse(response);
-				console.log(jsonResponse);
-				alert(jsonResponse.message);
+
+				// console.log(jsonResponse);
+				if(jsonResponse.status == 1) {
+					alert("You voted successfully, txhash "+jsonResponse.transactionHash);
+				} else {
+					alert("There is error when you vote, please check for detail txhash "+jsonResponse.transactionHash);
+				}
 			},
 			error: function (error) {
 				console.log(error);
@@ -27,10 +39,12 @@ $(function () {
 	});
 
 	function getMyVote() {
+		showLoader();
 		$.ajax({
 			url: '/myVote/' + localStorage.getItem("wallet"),
 			type: 'GET',
 			success: function (response) {
+				showLoader(false);
 				console.log('myVote: ' + response);
 				document.getElementById("myVoteResult").innerText = response;
 				if (response == 'YES') {
