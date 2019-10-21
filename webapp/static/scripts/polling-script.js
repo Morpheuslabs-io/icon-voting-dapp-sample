@@ -17,6 +17,7 @@ $(function () {
 			success: function (response) {
 				console.log(response);
 				jsonResponse = JSON.parse(response);
+				console.log(jsonResponse);
 				alert(jsonResponse.message);
 			},
 			error: function (error) {
@@ -77,15 +78,12 @@ $(function () {
 					label: '# Yes vs No Vote',
 					data: [response['yes'], response['no']],
 					backgroundColor: [
-
 						'rgba(54, 162, 235, 0.4)',
 						'rgba(255, 99, 132, 0.4)'
-
 					],
 					borderColor: [
 						'rgba(54, 162, 235, 1)',
 						'rgba(255,99,132,1)',
-
 					],
 					borderWidth: 1
 				}]
