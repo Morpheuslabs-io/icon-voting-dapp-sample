@@ -14,41 +14,45 @@ dApp includes 2 parts, smart contract and a web page for user to interactive wit
 Morpheuslabs platform provide great system to create a ready blockchain development with few clicks.
 
 Now, we firstly create a workspace with all thing setup to start develop
-    1. Register new account from `https://login.morpheuslabs.io`
-    2. Goto DashBoard tab click on New Workspace button
-    3. Select Icon for blockchain network to work with, and application for application type, and then click next
-    <img src="webapp/images/screens/ws-1"/>
-    4. Select Icon stack (ML-Icon-One)
-    <img src="webapp/images/screens/ws-2"/>
-    5. And then click next, then Confirm & submit to create workspace
-    6. Start workspace
-    <img src="webapp/images/screens/ws-6"/>
-    7. Open workspace
-    <img src="webapp/images/screens/ws-3"/>
-    So now, we have ready a development env to develop dApp
+1. Register new account from `https://login.morpheuslabs.io`
+2. Goto DashBoard tab click on New Workspace button
+3. Select Icon for blockchain network to work with, and application for application type, and then click next
+<img src="webapp/static/images/screens/ws-1.png"/>
+
+4. Select Icon stack (ML-Icon-One)
+<img src="webapp/static/images/screens/ws-2.png"/>
+    
+5. And then click next, then Confirm & submit to create workspace
+6. Start workspace
+<img src="webapp/static/images/screens/ws-6.png"/>
+    
+7. Open workspace
+<img src="webapp/static/images/screens/ws-3.png"/>
+    
+So now, we have ready a development env to develop dApp
 
 # Step 2: Create Icon blockchain Ops network
 
 Next, go to Blockchain Ops tab and click New BlockChain button
-    <img src="webapp/images/screens/bc-1"/>
+<img src="webapp/static/images/screens/bc-1.png"/>
 
-    2. Select Icon as your blockchain Ops and enter name
-    <img src="webapp/images/screens/bc-2"/>
+2. Select Icon as your blockchain Ops and enter name
+<img src="webapp/static/images/screens/bc-2.png"/>
 
-    3. Choose Ready to Go for basic setup, or Advance for more customize options, but we select basic setup for now.
-    <img src="webapp/images/screens/bc-3"/>
+3. Choose Ready to Go for basic setup, or Advance for more customize options, but we select basic setup for now.
+<img src="webapp/static/images/screens/bc-3.png"/>
 
-    4. Enter prefix as icon and password to create blockchain ops
-    <img src="webapp/images/screens/bc-4"/>
+4. Enter prefix as icon and password to create blockchain ops
+<img src="webapp/static/images/screens/bc-4.png"/>
 
-    5. Wait a while for creating and click start ico to start node
-    <img src="webapp/images/screens/bc-5"/>
+5. Wait a while for creating and click start ico to start node
+<img src="webapp/static/images/screens/bc-5.png"/>
 
-    6. To get Internal RPC URL (to connect from workspace), or external RPC URL (to connect from outside), click on information ico (i)
-    <img src="webapp/images/screens/bc-6"/>
+6. To get Internal RPC URL (to connect from workspace), or external RPC URL (to connect from outside), click on information ico (i)
+<img src="webapp/static/images/screens/bc-6.png"/>
 
-    7. Enter your password and click Retrieve button to get genesis address with default icon coin in it.
-    <img src="webapp/images/screens/bc-7"/>
+7. Enter your password and click Retrieve button to get genesis address with default icon coin in it.
+<img src="webapp/static/images/screens/bc-7.png"/>
 
 
 # Step 3: Test network and sdk
@@ -130,7 +134,7 @@ address:  hxdacf03b2020ef29d4e0453cef3cc463a290dcccc
 private key:  481d4b8492d3064f5637654d9b91a86e3c0d837bb732e1e7a71a17217b2186e7
 `
 Get this private key and upate into wallets of main.py file
-<img src="webapp/images/screens/ws-5"/>
+<img src="webapp/static/images/screens/ws-5.png"/>
 
 3. Install dependencies
 Run `pip3 install flask`
@@ -139,11 +143,11 @@ Run `pip3 install flask`
 `python3 main.py`
 
 5. Open workspace information to get public URL server
-<img src="webapp/images/screens/ws-9"/>
+<img src="webapp/static/images/screens/ws-9.png"/>
 
 6. Click on http-server link to view dapp
-<img src="webapp/images/screens/ws-10"/>
+<img src="webapp/static/images/screens/ws-10.png"/>
 
 7. Select user you want to use to vote, select option (yes/no) to vote.
 Wait for a while for your transaction is confirmed. And you can see your voting on your chart.
-<img src="webapp/images/screens/ws-11"/>
+<img src="webapp/static/images/screens/ws-11.png"/>
