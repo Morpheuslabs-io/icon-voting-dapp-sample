@@ -16,16 +16,14 @@ from repeater import retry
 app = Flask(__name__)
 default_account = 'hx86f8117539f039f7c6b5a8ca8d233e2e752bd8fa'
 default_score = "cx26da99fcddd7f06a0e565e0e3edde3d1218ff5da" # voting smart contract address
-icon_service = IconService(HTTPProvider("http://bops-t.morpheuslabs.io:27107/api/v3"))
+icon_node_rpc = "http://bops-t.morpheuslabs.io:27107/api/v3"; # internal RPC node URL
+icon_service = IconService(HTTPProvider(icon_node_rpc))
 
 wallets = {
     'wallet1': KeyWallet.load(bytes.fromhex("fb9164edaf46e254917694e3ea7daa65796c6899d2382c977fd9e8ffd995f348")),
     'wallet2': KeyWallet.load(bytes.fromhex("19d8fa5a7dcb3ab6aa1a6348a88007bf100827f43c26457d01ca0260711ac2df")),
     'wallet3': KeyWallet.load(bytes.fromhex("6c1a06076e7b115be29f0446f332b4f3968c9eb218106d2c6da46a29687f7161"))
-    
-    # 'wallet3': KeyWallet.load(bytes.fromhex("158e91b164b420be685b90dac6743f9c06729ef26b98d667abc2044b7b6d056d")),
 }
-
 
 def has_no_empty_params(rule):
     defaults = rule.defaults if rule.defaults is not None else ()
