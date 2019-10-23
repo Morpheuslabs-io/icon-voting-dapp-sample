@@ -14,7 +14,7 @@ dApp includes 2 parts, smart contract and a web page for user to interactive wit
 Morpheuslabs platform provide great system to create a ready blockchain development with few clicks.
 
 Now, we firstly create a workspace with all thing setup to start develop
-1. Register new account from `https://login.morpheuslabs.io`
+1. Register new account in `https://bps.morpheuslabs.io`
 2. Goto DashBoard tab click on New Workspace button
 3. Select Icon for blockchain network to work with, and application for application type, and then click next
 <img src="webapp/static/images/screens/ws-1.png"/>
